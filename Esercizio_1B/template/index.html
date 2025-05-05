@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Nome Cognome" />
+	<title>img</title>
+	<style type="text/css">
+		html{
+			height:100%;
+		}
+		body{
+			background-color: rgb(235,235,235);
+			margin: 3em 2em;
+		}
+	</style>
+
+</head>
+<body>
+
+	<img />
+
+	<script type="module">
+
+		const sequenza = [
+			"img/0000.png",
+			"img/0001.png",
+			"img/0002.png",
+			"img/0003.png",
+			"img/0004.png",
+			"img/0005.png",
+			"img/0006.png",
+			"img/0009.png",
+			"img/00010.png",
+			"img/00011.png",
+			"img/00012.png",
+			"img/00013.png",
+			"img/00014.png",
+			"img/00015.png",
+			"img/00016.png",
+			"img/00017.png",
+			"img/00018.png",
+			"img/00019.png",
+			"img/00020.png",
+			"img/00021.png",
+			"img/00022.png",
+			"img/00023.png",
+			"img/00024.png",
+			"img/00025.png",
+			"img/00026.png",
+			"img/00027.png",
+			"img/00028.png",
+			"img/00029.png",
+			"img/00030.png",
+			"img/00031.png",
+			"img/00032.png",
+			"img/00033.png",
+			"img/00034.png",
+			"img/00035.png",
+			"img/00036.png",
+			"img/00037.png",
+			"img/00038.png",
+			"img/00039.png",
+			"img/00040.png",
+			// ----------------------
+			"img/00040.png",
+			"img/00039.png",
+			"img/00038.png",
+			"img/00037.png",
+			"img/00036.png",
+			"img/00035.png",
+			"img/00034.png",
+			"img/00033.png",
+			"img/00032.png",
+			"img/00031.png",
+			"img/00030.png",
+			"img/00029.png",
+			"img/00028.png",
+			"img/00027.png",
+			"img/00026.png",
+			"img/00025.png",
+			"img/00024.png",
+			"img/00023.png",
+			"img/00022.png",
+			"img/00021.png",
+			"img/00020.png",
+			"img/00019.png",
+			"img/00018.png",
+			"img/00017.png",
+			"img/00016.png",
+			"img/00015.png",
+			"img/00014.png",
+			"img/00013.png",
+			"img/00012.png",
+			"img/00011.png",
+			"img/00010.png",
+			"img/0009.png",
+			"img/0006.png",
+			"img/0005.png",
+			"img/0004.png",
+			"img/0003.png",
+			"img/0002.png",
+			"img/0001.png",
+			"img/0000.png",
+		]
+
+		let frame = 0
+
+		setInterval(() => {
+			const img = document.querySelector("img")
+			img.src = sequenza[frame]
+			frame = (frame + 1) % sequenza.length
+		}, 80)
+
+	</script>
+</body>
+</html>
