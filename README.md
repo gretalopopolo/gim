@@ -16,4 +16,10 @@ Corso di Grafica In Movimento 2025, SUPSI
 
 # esercizio 1C
 Il testo esplora il concetto di movimento attraverso la metafora delle marionette. Grazie al dialogo, tra il protagonista e il marionettista, viene illustrato e sottolineato come i movimenti delle marionette siano spontanee e aggraziati essendo prive di volontà propria e di coscienza; le movenze degli esseri umani, invece, sono slegate, sconnesse e spesso macchinose. Gli esempi che il testo riporta, il ragazzo con la scheggia o i movimenti meccanici del fioretto che si scontra con l’orso, evidenziano la rigidità e la mancanza di grazia dell’uomo l’uomo, differenziandolo dalle marionette che sfidano le leggi gravitazionali grazie ai loro movimenti aggraziati e sinuosi.
-Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della propria anima, della grazia e della spontaneità deve ritrovare l’innocenza, quella che si possiede da bambini, ed essa si può raggiungere sperimentando l’arte, la solidarietà, la fratellanza, l’aiuto reciproco e facendo coincidere la ragione con e l’istinto. L’impresa per l’uomo si annida nel ritrovare la grazia, la fantasia, la spontaneità in un mondo rigido governato dalla tecnica e dal controllo il quale predilige l’alienazione alla genuità.
+Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della propria anima, della grazia e della spontaneità deve ritrovare l’innocenza, quella che si possiede da bambini, ed essa si può raggiungere sperimentando l’arte, la solidarietà, la fratellanza, l’aiuto reciproco e facendo coincidere la ragione con e l’istinto. L’impresa per l’uomo si annida nel ritrovare la grazia, la fantasia, la spontaneità in un mondo rigido governato dalla tecnica e dal controllo il quale predilige l’alienazione alla genuità.  
+
+# esercizio 2
+  [parallex](/Esercizio_2/index_interrativo.html)   
+  [parallex](/Esercizio_2/index_animato.html) 
+# esercizio 3A
+# esercizio 3B
