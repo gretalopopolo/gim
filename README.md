@@ -25,3 +25,4 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
 [pong](https://gretalopopolo.github.io/gim/es03_pong/index.html)   
 [pioggia 3D](https://gretalopopolo.github.io/gim/es05_pioggia_3D/index.html) 
 [neve](https://gretalopopolo.github.io/gim/es06_neve100/index.html) 
+[orologio analogico](https://gretalopopolo.github.io/gim/es08_orologio_analogico/index.html) 
