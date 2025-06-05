@@ -20,6 +20,6 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
 
 # esercizio 2
   [parallasse_interattivo](/Esercizio_2/template/index_interattivo.html)   
-  [parallasse_animato](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_animato.html) 
+  [parallasse_animato](/Esercizio_2/template/index_animato.html) 
 # esercizio 3A
 # esercizio 3B
