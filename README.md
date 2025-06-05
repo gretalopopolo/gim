@@ -22,7 +22,7 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
   [parallasse_interattivo](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_animato.html)   
   [parallasse_animato](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_animato.html) 
 # esercizio 3A    
-[pong](https://gretalopopolo.github.io/gim/es03_pong/index.html)   
-[pioggia 3D](https://gretalopopolo.github.io/gim/es05_pioggia_3D/index.html)   
-[neve](https://gretalopopolo.github.io/gim/es06_neve100/index.html)   
-[orologio analogico](https://gretalopopolo.github.io/gim/es08_orologio_analogico/index.html) 
+[pong](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong/index.html)   
+[pioggia 3D](https://gretalopopolo.github.io/gim/Esercizio_3A/es05_pioggia_3D/index.html)   
+[neve](https://gretalopopolo.github.io/gim/eEsercizio_3A/es06_neve100/index.html)   
+[orologio analogico](https://gretalopopolo.github.io/gim/Esercizio_3A/es08_orologio_analogico/index.html) 
