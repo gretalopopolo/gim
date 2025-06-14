@@ -24,8 +24,8 @@ function setup() {
 
   posX = width / 2;
   posY = height / 2;
-  velX = random([-1, 1]) * random(3, 20);
-  velY = random([-1, 1]) * random(3, 20);
+  velX = random([-1, 0.5]) * random(10, 21);
+  velY = random([-1, 0.5]) * random(2, 15);
 
   ballColor = color(random(360), 80, 100);
   targetSize = random(60, 140);
@@ -100,8 +100,8 @@ function cambiaAspetto() {
 function resetBall() {
   posX = width / 2;
   posY = height / 2;
-  velX = random([-1, 1]) * random(10, 24);
-  velY = random([-1, 1]) * random(10, 24);
+  velX = random([-1, 1]) * random(10, 21);
+  velY = random([-1, 1]) * random(10, 19);
   cambiaAspetto();
   trail = [];
 }
