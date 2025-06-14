@@ -12,7 +12,7 @@ Corso di Grafica In Movimento 2025, SUPSI
 - [Spostamento_3](https://gretalopopolo.github.io/gim/Esercizio_1A/spostamento_3.html)  
 
 ## Esercizio 1B
--[Logo_animato](https://gretalopopolo.github.io/gim/Esercizio_1B/template/index.html)
+- [Logo_animato](https://gretalopopolo.github.io/gim/Esercizio_1B/template/index.html)
 
 ## Esercizio 1C
 Il testo esplora il concetto di movimento attraverso la metafora delle marionette. Grazie al dialogo, tra il protagonista e il marionettista, viene illustrato e sottolineato come i movimenti delle marionette siano spontanee e aggraziati essendo prive di volontà propria e di coscienza; le movenze degli esseri umani, invece, sono slegate, sconnesse e spesso macchinose. Gli esempi che il testo riporta, il ragazzo con la scheggia o i movimenti meccanici del fioretto che si scontra con l’orso, evidenziano la rigidità e la mancanza di grazia dell’uomo l’uomo, differenziandolo dalle marionette che sfidano le leggi gravitazionali grazie ai loro movimenti aggraziati e sinuosi.
