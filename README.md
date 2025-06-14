@@ -20,11 +20,11 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
 
 ## Esercizio 2
 - [Parallasse_interattivo](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_interattivo.html)   
-- [Parallasse_animato](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_animato.html) 
+- [Parallasse_animato](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_animato.html)
 ## Esercizio 3A    
 - [Pong](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong/index.html)   
 - [Pong_interattivo](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong_interattivo/index.html)   
 - [Pioggia 3D](https://gretalopopolo.github.io/gim/Esercizio_3A/es05_pioggia_3D/index.html)   
-- [Neve](https://gretalopopolo.github.io/gim/Esercizio_3A/es06_neve100/index.html)     
+- [Neve](https://gretalopopolo.github.io/gim/Esercizio_3A/es06_neve100/index.html)
 ## Esercizio 3B  
 - [Orologio_analogico](https://gretalopopolo.github.io/gim/Esercizio_3A/es08_orologio_analogico/index.html) 
