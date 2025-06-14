@@ -1,15 +1,15 @@
 # gim
 Corso di Grafica In Movimento 2025, SUPSI
 
-# esercizio 1A
-[acceso_spento_2](https://gretalopopolo.github.io/gim/Esercizio_1A/acceso_spento_2.html)  
-[acceso_spento_3](https://gretalopopolo.github.io/gim/Esercizio_1A/acceso_spento_3.html)  
-[aperto_chiuso_2](https://gretalopopolo.github.io/gim/Esercizio_1A/aperto_chiuso_2.html)  
-[aperto_chiuso_3](https://gretalopopolo.github.io/gim/Esercizio_1A/aperto_chiuso_3.html)  
-[rotazione_2](https://gretalopopolo.github.io/gim/Esercizio_1A/rotazione_2.html)   
-[rotazione_3](https://gretalopopolo.github.io/gim/Esercizio_1A/rotazione_3.html)  
-[spostamento_2](https://gretalopopolo.github.io/gim/Esercizio_1A/spostamento_2.html)  
-[spostamento_3](https://gretalopopolo.github.io/gim/Esercizio_1A/spostamento_3.html)  
+## Esercizio 1A
+[Acceso_spento_2](https://gretalopopolo.github.io/gim/Esercizio_1A/acceso_spento_2.html)  
+[Acceso_spento_3](https://gretalopopolo.github.io/gim/Esercizio_1A/acceso_spento_3.html)  
+[Aperto_chiuso_2](https://gretalopopolo.github.io/gim/Esercizio_1A/aperto_chiuso_2.html)  
+[Aperto_chiuso_3](https://gretalopopolo.github.io/gim/Esercizio_1A/aperto_chiuso_3.html)  
+[Rotazione_2](https://gretalopopolo.github.io/gim/Esercizio_1A/rotazione_2.html)   
+[Rotazione_3](https://gretalopopolo.github.io/gim/Esercizio_1A/rotazione_3.html)  
+[Spostamento_2](https://gretalopopolo.github.io/gim/Esercizio_1A/spostamento_2.html)  
+[Spostamento_3](https://gretalopopolo.github.io/gim/Esercizio_1A/spostamento_3.html)  
 
 # esercizio 1B
 [logo_animato](https://gretalopopolo.github.io/gim/Esercizio_1B/template/index.html)
