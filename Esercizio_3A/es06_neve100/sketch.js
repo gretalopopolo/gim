@@ -3,17 +3,7 @@ let numFiocchi = 600;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  for (let i = 0; i < numFiocchi; i++) {
-    fiocchi.push({
-      x: random(width),
-      y: random(-height, 0),
-      size: random(5, 15),
-      speed: random(1, 3),
-      angle: random(TWO_PI),
-      angleSpeed: random(0.01, 0.03),
-      shape: random(['circle', 'star', 'cross', 'simpleSnowflake'])
-    });
-  }
+  creaFiocchi(numFiocchi);
 }
 
 function draw() {
@@ -22,20 +12,16 @@ function draw() {
   noStroke();
 
   for (let f of fiocchi) {
-    // Oscillazione orizzontale dolce
     f.x += sin(f.angle) * 0.5;
     f.angle += f.angleSpeed;
 
-    // Caduta verticale
     f.y += f.speed;
 
-    // Reset fiocco se esce dal basso
     if (f.y > height) {
       f.y = random(-50, 0);
       f.x = random(width);
     }
 
-    // Disegna il fiocco in base alla forma
     push();
     translate(f.x, f.y);
     drawFiocco(f.shape, f.size);
@@ -43,16 +29,33 @@ function draw() {
   }
 }
 
+function creaFiocchi(n, posX = null, posY = null) {
+  for (let i = 0; i < n; i++) {
+    let size = random() < 0.15 ? random(20, 30) : random(5, 15);
+    fiocchi.push({
+      x: posX !== null ? posX + random(-30, 30) : random(width),
+      y: posY !== null ? posY + random(-30, 30) : random(-height, 0),
+      size: size,
+      speed: map(size, 5, 30, 1, 3),
+      angle: random(TWO_PI),
+      angleSpeed: random(0.01, 0.03),
+      shape: random(['circle', 'star', 'cross', 'simpleSnowflake'])
+    });
+  }
+}
+
+function mousePressed() {
+  creaFiocchi(5, mouseX, mouseY);  // ora 5 fiocchi a ogni click
+}
+
 function drawFiocco(shape, size) {
   switch(shape) {
     case 'circle':
       ellipse(0, 0, size);
       break;
-
     case 'star':
       star(0, 0, size / 4, size / 2, 5);
       break;
-
     case 'cross':
       stroke(255);
       strokeWeight(2);
@@ -60,7 +63,6 @@ function drawFiocco(shape, size) {
       line(0, -size / 2, 0, size / 2);
       noStroke();
       break;
-
     case 'simpleSnowflake':
       stroke(255);
       strokeWeight(1.5);
@@ -73,7 +75,6 @@ function drawFiocco(shape, size) {
   }
 }
 
-// Funzione per disegnare una stella a 5 punte
 function star(x, y, radius1, radius2, npoints) {
   let angle = TWO_PI / npoints;
   let halfAngle = angle / 2.0;
