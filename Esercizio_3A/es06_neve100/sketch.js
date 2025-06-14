@@ -17,7 +17,6 @@ function draw() {
     f.angle += f.angleSpeed;
     let oscillation = sin(f.angle) * f.amplitude;
 
-    // Solo fiocchi piccoli tremolano un po'
     let jitter = f.dim < 40 ? random(-0.15, 0.15) : 0;
 
     f.px += oscillation + jitter;
@@ -37,11 +36,11 @@ function draw() {
 
 function creaFiocchi(n, posX = null, posY = null) {
   for (let i = 0; i < n; i++) {
-    let dim = random() < 0.2 ? random(50, 80) : random(10, 30);
+    let dim = random() < 0.2 ? random(40, 60) : random(10, 30);
 
     fiocchi.push({
-      px: posX !== null ? posX + random(-10, 10) : random(20, width - 20),
-      py: posY !== null ? posY + random(-10, 10) : random(-height * 1.5, 0),
+      px: posX !== null ? posX : random(20, width - 20),
+      py: posY !== null ? posY : random(-height * 1.5, 0),
       dim: dim,
       vel: random(0.2, 0.7),
       vy: 0,
@@ -53,9 +52,17 @@ function creaFiocchi(n, posX = null, posY = null) {
 }
 
 function mousePressed() {
-  let spacing = 25;
+  let spacing = 25; // distanza tra i fiocchi
+  let baseX = mouseX;
+  let baseY = mouseY;
+
   for (let i = 0; i < 5; i++) {
-    creaFiocchi(1, mouseX + (i - 2) * spacing, mouseY + random(-10, 10));
+    creaFiocchi(1, baseX, baseY);
+    // Sposto l'ultimo fiocco creato per distanziarlo
+    let last = fiocchi[fiocchi.length - 1];
+    // Distribuisco a ventaglio in orizzontale e verticale:
+    last.px += (i - 2) * spacing; // i va da 0 a 4, quindi sposta da -50 a +50 px
+    last.py += (i % 2 === 0 ? 1 : -1) * spacing * floor(i / 2); // alterna su/giù e aumenta distanza
   }
 }
 
