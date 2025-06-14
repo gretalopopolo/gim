@@ -6,7 +6,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(10, 10, 40); // sfondo blu scuro
   fill(255);
   textAlign(CENTER, CENTER);
 
@@ -58,11 +58,9 @@ function mousePressed() {
 
   for (let i = 0; i < 5; i++) {
     creaFiocchi(1, baseX, baseY);
-    // Sposto l'ultimo fiocco creato per distanziarlo
     let last = fiocchi[fiocchi.length - 1];
-    // Distribuisco a ventaglio in orizzontale e verticale:
-    last.px += (i - 2) * spacing; // i va da 0 a 4, quindi sposta da -50 a +50 px
-    last.py += (i % 2 === 0 ? 1 : -1) * spacing * floor(i / 2); // alterna su/giù e aumenta distanza
+    last.px += (i - 2) * spacing;
+    last.py += (i % 2 === 0 ? 1 : -1) * spacing * floor(i / 2);
   }
 }
 
