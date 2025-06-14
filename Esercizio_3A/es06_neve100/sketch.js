@@ -1,93 +1,66 @@
 let fiocchi = [];
-let numFiocchi = 600;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  creaFiocchi(numFiocchi);
+
+  creaFiocchi(500);
 }
 
 function draw() {
-  background(0, 30, 60);
+  background(0);
   fill(255);
-  noStroke();
+  textAlign(CENTER, CENTER);
 
-  for (let f of fiocchi) {
-    f.x += sin(f.angle) * 0.5;
+  for (let i = 0; i < fiocchi.length; i++) {
+    let f = fiocchi[i];
+
+    f.vy = lerp(f.vy, f.vel, 0.01);
+
     f.angle += f.angleSpeed;
 
-    f.y += f.speed;
+    let oscillation = sin(f.angle) * f.amplitude;
 
-    if (f.y > height) {
-      f.y = random(-50, 0);
-      f.x = random(width);
+    f.px += oscillation + random(-0.3, 0.3);
+    f.py += f.vy;
+
+    if (f.py > height) {
+      f.py = random(-height, 0);
+      f.px = random(0, width);
+      f.vy = 0;
+      f.angle = random(TWO_PI);
     }
 
-    push();
-    translate(f.x, f.y);
-    drawFiocco(f.shape, f.size);
-    pop();
+    textSize(f.dim);
+    text("*", f.px, f.py);
   }
 }
 
 function creaFiocchi(n, posX = null, posY = null) {
   for (let i = 0; i < n; i++) {
-    let size = random() < 0.15 ? random(20, 30) : random(5, 15);
+    // dimensioni più variabili, da piccolissimi a molto grandi
+    let dim;
+    if (random() < 0.3) {
+      // 30% fiocchi grandi
+      dim = random(50, 80);
+    } else {
+      // 70% fiocchi piccoli
+      dim = random(10, 30);
+    }
     fiocchi.push({
-      x: posX !== null ? posX + random(-30, 30) : random(width),
-      y: posY !== null ? posY + random(-30, 30) : random(-height, 0),
-      size: size,
-      speed: map(size, 5, 30, 1, 3),
+      px: posX !== null ? posX + random(-15, 15) : random(width),
+      py: posY !== null ? posY + random(-15, 15) : random(-height, 0),
+      dim: dim,
+      vel: random(1, 3),
+      vy: 0,
       angle: random(TWO_PI),
       angleSpeed: random(0.01, 0.03),
-      shape: random(['circle', 'star', 'cross', 'simpleSnowflake'])
+      amplitude: random(0.5, 1.5)
     });
   }
 }
 
 function mousePressed() {
-  creaFiocchi(5, mouseX, mouseY);  // ora 5 fiocchi a ogni click
-}
-
-function drawFiocco(shape, size) {
-  switch(shape) {
-    case 'circle':
-      ellipse(0, 0, size);
-      break;
-    case 'star':
-      star(0, 0, size / 4, size / 2, 5);
-      break;
-    case 'cross':
-      stroke(255);
-      strokeWeight(2);
-      line(-size / 2, 0, size / 2, 0);
-      line(0, -size / 2, 0, size / 2);
-      noStroke();
-      break;
-    case 'simpleSnowflake':
-      stroke(255);
-      strokeWeight(1.5);
-      for (let i = 0; i < 6; i++) {
-        rotate(PI / 3);
-        line(0, 0, 0, size / 2);
-      }
-      noStroke();
-      break;
-  }
-}
-
-function star(x, y, radius1, radius2, npoints) {
-  let angle = TWO_PI / npoints;
-  let halfAngle = angle / 2.0;
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += angle) {
-    let sx = x + cos(a) * radius2;
-    let sy = y + sin(a) * radius2;
-    vertex(sx, sy);
-    sx = x + cos(a + halfAngle) * radius1;
-    sy = y + sin(a + halfAngle) * radius1;
-    vertex(sx, sy);
-  }
-  endShape(CLOSE);
+  creaFiocchi(5, mouseX, mouseY);
 }
 
 function windowResized() {
