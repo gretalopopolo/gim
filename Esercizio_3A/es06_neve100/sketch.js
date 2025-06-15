@@ -13,7 +13,7 @@ function draw() {
   for (let i = 0; i < fiocchi.length; i++) {
     let f = fiocchi[i];
 
-    f.vy = lerp(f.vy, f.vel, 0.01); // accelerazione morbida verso la velocità finale
+    f.vy = lerp(f.vy, f.vel, 0.005); // accelerazione ancora più lenta
     f.angle += f.angleSpeed;
     let oscillation = sin(f.angle) * f.amplitude;
 
@@ -42,7 +42,7 @@ function creaFiocchi(n, posX = null, posY = null) {
       px: posX !== null ? posX : random(20, width - 20),
       py: posY !== null ? posY : random(-height * 1.5, 0),
       dim: dim,
-      vel: random(3, 6), // 🚀 molto più veloce
+      vel: random(1.5, 3), // 💨 più lento
       vy: 0,
       angle: random(TWO_PI),
       angleSpeed: random(0.003, 0.008),
