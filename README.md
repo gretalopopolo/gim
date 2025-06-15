@@ -29,4 +29,4 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
 - [Neve](https://gretalopopolo.github.io/gim/Esercizio_3A/es06_neve100/index.html)  
 
 ## Esercizio 3B  
-- [Orologio_analogico](https://gretalopopolo.github.io/gim/Esercizio_3A/es08_orologio_analogico/index.html) 
+- [Che ora è?](https://gretalopopolo.github.io/gim/Esercizio_3A/es08_orologio_analogico/index.html) 
