@@ -6,14 +6,14 @@ function setup() {
 }
 
 function draw() {
-  background(10, 10, 40); // sfondo blu scuro
+  background(10, 10, 40);
   fill(255);
   textAlign(CENTER, CENTER);
 
   for (let i = 0; i < fiocchi.length; i++) {
     let f = fiocchi[i];
 
-    f.vy = lerp(f.vy, f.vel, 0.01); // accelerazione morbida verso la velocità finale
+    f.vy = lerp(f.vy, f.vel, 0.01);
     f.angle += f.angleSpeed;
     let oscillation = sin(f.angle) * f.amplitude;
 
@@ -42,7 +42,7 @@ function creaFiocchi(n, posX = null, posY = null) {
       px: posX !== null ? posX : random(20, width - 20),
       py: posY !== null ? posY : random(-height * 1.5, 0),
       dim: dim,
-      vel: random(1.5, 3), // velocità lenta e coerente
+      vel: random(1, 3),   // <-- velocità più lenta (prima era 3-6)
       vy: 0,
       angle: random(TWO_PI),
       angleSpeed: random(0.003, 0.008),
@@ -57,10 +57,10 @@ function mousePressed() {
   let baseY = mouseY;
 
   for (let i = 0; i < 5; i++) {
-    creaFiocchi(1);
+    creaFiocchi(1, baseX, baseY);
     let last = fiocchi[fiocchi.length - 1];
-    last.px = baseX + (i - 2) * spacing;
-    last.py = baseY + (i % 2 === 0 ? 1 : -1) * spacing * floor(i / 2);
+    last.px += (i - 2) * spacing;
+    last.py += (i % 2 === 0 ? 1 : -1) * spacing * floor(i / 2);
   }
 }
 
