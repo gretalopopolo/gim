@@ -23,9 +23,9 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
 - [Parallasse_animato](https://gretalopopolo.github.io/gim/Esercizio_2/template/index_animato.html)  
 
 ## Esercizio 3A    
-- [Pong](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong/index.html)   
-- [Pong_interattivo](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong_interattivo/index.html)   
-- [Pioggia 3D](https://gretalopopolo.github.io/gim/Esercizio_3A/es05_pioggia_3D/index.html)   
+- [Pong](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong/pong.html)   
+- [Pong_interattivo](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong_interattivo/pong_interattivo.html)   
+- [Pioggia 3D](https://gretalopopolo.github.io/gim/Esercizio_3A/es05_pioggia_3D/pioggia_3D.html)   
 - [Neve](https://gretalopopolo.github.io/gim/Esercizio_3A/es06_neve100/index.html)  
 
 ## Esercizio 3B  
