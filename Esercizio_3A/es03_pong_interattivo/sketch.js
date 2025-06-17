@@ -179,10 +179,86 @@ function movePlayers() {
 function showScore() {
   fill(0, 0, 100);
   noStroke();
+
+  // Punteggio principale
   textSize(64 * scale);
   text(score1 + " : " + score2, width / 2, 90 * scaleY);
+
+  // Titolo
   textSize(48 * scale);
   text("PUNTEGGIO", width / 2, 160 * scaleY);
+
+  // Istruzioni
+  textSize(16 * scale); // più piccola
+  text(
+    "Premi le freccette per muovere il giocatore di destra e i tasti WASD per muovere il giocatore di sinistra",
+    width / 2,
+    210 * scaleY
+  );
+
+  // Icone
+  drawKeyIcons();
+}
+
+function drawKeyIcons() {
+  const size = 22 * scale; // più piccolo
+  const spacing = 10 * scale;
+  const baseY = 290 * scaleY;  // Ancora più in basso rispetto a prima
+
+  // Frecce (a sinistra)
+  drawArrowIcon(width / 2 - 160 * scale, baseY - size, "up", size);
+  drawArrowIcon(width / 2 - 160 * scale, baseY + size, "down", size);
+  drawArrowIcon(width / 2 - 200 * scale, baseY, "left", size);
+  drawArrowIcon(width / 2 - 120 * scale, baseY, "right", size);
+
+  // WASD (a destra)
+  drawKeyIcon(width / 2 + 120 * scale, baseY - size, "W", size);
+  drawKeyIcon(width / 2 + 80 * scale, baseY, "A", size);
+  drawKeyIcon(width / 2 + 120 * scale, baseY, "S", size);
+  drawKeyIcon(width / 2 + 160 * scale, baseY, "D", size);
+}
+
+function drawArrowIcon(x, y, direction, size) {
+  push();
+  translate(x, y);
+  fill(255);
+  noStroke();
+  beginShape();
+  if (direction === "up") {
+    vertex(0, -size / 2);
+    vertex(-size / 2, size / 2);
+    vertex(size / 2, size / 2);
+  } else if (direction === "down") {
+    vertex(0, size / 2);
+    vertex(-size / 2, -size / 2);
+    vertex(size / 2, -size / 2);
+  } else if (direction === "left") {
+    vertex(-size / 2, 0);
+    vertex(size / 2, -size / 2);
+    vertex(size / 2, size / 2);
+  } else if (direction === "right") {
+    vertex(size / 2, 0);
+    vertex(-size / 2, -size / 2);
+    vertex(-size / 2, size / 2);
+  }
+  endShape(CLOSE);
+  pop();
+}
+
+function drawKeyIcon(x, y, letter, size) {
+  push();
+  translate(x, y);
+  rectMode(CENTER);
+  fill(255);
+  stroke(0);
+  strokeWeight(1.5);
+  rect(0, 0, size, size, 4 * scale);
+  fill(0);
+  noStroke();
+  textSize(size * 0.6);
+  textAlign(CENTER, CENTER);
+  text(letter, 0, 0);
+  pop();
 }
 
 function calculateScales() {
