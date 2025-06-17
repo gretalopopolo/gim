@@ -4,10 +4,9 @@ let ballColor;
 let ballSize;
 let targetSize;
 
-let paddleWidth = 40;
-let paddleHeight = 200;
+let paddleWidth, paddleHeight;
 let p1Y, p2Y;
-let paddleSpeed = 14;
+let paddleSpeed;
 
 let score1 = 0;
 let score2 = 0;
@@ -15,27 +14,68 @@ let score2 = 0;
 let trail = [];
 let maxTrailLength = 30;
 
+let gameStarted = false;
+let button;
+
+const BASE_WIDTH = 1600;
+const BASE_HEIGHT = 1200;
+
+let scaleX, scaleY, scale;
+
 function setup() {
-  createCanvas(1600, 1200);
+  createCanvas(windowWidth, windowHeight);
+  calculateScales();
+
+  textAlign(CENTER, CENTER);
+  textSize(48 * scale);
   colorMode(HSB, 360, 100, 100, 1);
-  background(0);
-  textAlign(CENTER, TOP);
-  textSize(64);
+
+  // Pulsante "Inizia partita"
+  button = createButton("Inizia partita");
+  button.position(width / 2 - 80, height / 2 + 60 * scale);  // più in basso
+  button.style("font-size", `${24 * scale}px`);
+  button.style("padding", "12px 24px");
+  button.mousePressed(startGame);
+}
+
+function startGame() {
+  gameStarted = true;
+  button.hide();
+  resetGame();
+}
+
+function resetGame() {
+  score1 = 0;
+  score2 = 0;
 
   posX = width / 2;
   posY = height / 2;
-  velX = random([-1, 0.5]) * random(10, 21);
-  velY = random([-1, 0.5]) * random(2, 15);
+  velX = random([-1, 0.5]) * random(10, 21) * scale;
+  velY = random([-1, 0.5]) * random(2, 15) * scale;
 
   ballColor = color(random(360), 80, 100);
-  targetSize = random(60, 140);
+  targetSize = random(60, 140) * scale;
   ballSize = targetSize;
+
+  const uniformScale = min(scaleX, scaleY);
+  paddleWidth = 40 * uniformScale;
+  paddleHeight = 200 * uniformScale;
+  paddleSpeed = 14 * uniformScale;
 
   p1Y = height / 2 - paddleHeight / 2;
   p2Y = height / 2 - paddleHeight / 2;
+
+  trail = [];
 }
 
 function draw() {
+  if (!gameStarted) {
+    background(0);
+    fill(0, 0, 100);
+    text("Benvenuto nel Pong Colorato!", width / 2, height / 2 - 30 * scale); // testo più in basso rispetto al centro
+    return;
+  }
+
   background(0);
 
   posX += velX;
@@ -46,16 +86,16 @@ function draw() {
     cambiaAspetto();
   }
 
-  if (posX <= paddleWidth && posY > p1Y && posY < p1Y + paddleHeight) {
+  if (posX <= 30 + paddleWidth && posY > p1Y && posY < p1Y + paddleHeight) {
     velX *= -1;
     cambiaAspetto();
-    posX = paddleWidth + 1;
+    posX = 30 + paddleWidth + 1;
   }
 
-  if (posX >= width - paddleWidth && posY > p2Y && posY < p2Y + paddleHeight) {
+  if (posX >= width - paddleWidth - 30 && posY > p2Y && posY < p2Y + paddleHeight) {
     velX *= -1;
     cambiaAspetto();
-    posX = width - paddleWidth - 1;
+    posX = width - paddleWidth - 30 - 1;
   }
 
   if (posX < 0) {
@@ -83,7 +123,7 @@ function draw() {
   ballSize += (targetSize - ballSize) * 0.2;
   fill(ballColor);
   noStroke();
-  drawingContext.shadowBlur = 120;
+  drawingContext.shadowBlur = 120 * scale;
   drawingContext.shadowColor = ballColor;
   ellipse(posX, posY, ballSize);
 
@@ -94,23 +134,28 @@ function draw() {
 
 function cambiaAspetto() {
   ballColor = color(random(360), 80, 100);
-  targetSize = random(60, 140);
+  targetSize = random(60, 140) * scale;
 }
 
 function resetBall() {
   posX = width / 2;
   posY = height / 2;
-  velX = random([-1, 1]) * random(10, 21);
-  velY = random([-1, 1]) * random(10, 19);
+  velX = random([-1, 1]) * random(10, 21) * scale;
+  velY = random([-1, 1]) * random(10, 19) * scale;
   cambiaAspetto();
   trail = [];
 }
 
 function drawPaddles() {
   noStroke();
-  fill(0, 0, 100);
-  rect(0, p1Y, paddleWidth, paddleHeight);
-  rect(width - paddleWidth, p2Y, paddleWidth, paddleHeight);
+
+  // Player 1 - Azzurro, spostato a destra di 30 px
+  fill(190, 80, 100); // HSB azzurro
+  rect(30, p1Y, paddleWidth, paddleHeight);
+
+  // Player 2 - Rosa, spostato a sinistra di 30 px
+  fill(320, 80, 100); // HSB rosa
+  rect(width - paddleWidth - 30, p2Y, paddleWidth, paddleHeight);
 }
 
 function movePlayers() {
@@ -126,8 +171,31 @@ function movePlayers() {
 function showScore() {
   fill(0, 0, 100);
   noStroke();
-  textSize(64);
-  text(score1 + " : " + score2, width / 2, 40);
-  textSize(48);
-  text("PUNTEGGIO", width / 2, 110);
+  textSize(64 * scale);
+  text(score1 + " : " + score2, width / 2, 90 * scaleY);   // leggermente più in basso
+  textSize(48 * scale);
+  text("PUNTEGGIO", width / 2, 160 * scaleY);               // leggermente più in basso
+}
+
+function calculateScales() {
+  scaleX = windowWidth / BASE_WIDTH;
+  scaleY = windowHeight / BASE_HEIGHT;
+  scale = ((scaleX + scaleY) / 2) * 0.8;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  calculateScales();
+
+  if (!gameStarted) {
+    button.position(width / 2 - 80, height / 2 + 60 * scale);
+  }
+
+  const uniformScale = min(scaleX, scaleY);
+  paddleWidth = 40 * uniformScale;
+  paddleHeight = 200 * uniformScale;
+  paddleSpeed = 14 * uniformScale;
+
+  p1Y = constrain(p1Y, 0, height - paddleHeight);
+  p2Y = constrain(p2Y, 0, height - paddleHeight);
 }
