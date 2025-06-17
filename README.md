@@ -26,7 +26,7 @@ Verso la conclusione si giunge alla soluzione: l’uomo per riappropriarsi della
 - [pong](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong/pong.html)   
 - [pong_interattivo](https://gretalopopolo.github.io/gim/Esercizio_3A/es03_pong_interattivo/pong_interattivo.html)   
 - [pioggia 3D](https://gretalopopolo.github.io/gim/Esercizio_3A/es05_pioggia_3D/pioggia_3D.html)   
-- [neve](https://gretalopopolo.github.io/gim/Esercizio_3A/es06_neve100/neve.html)  
+- [neve(genera fiocchi al clic del mouse)](https://gretalopopolo.github.io/gim/Esercizio_3A/es06_neve100/neve.html)  
 
 ## Esercizio 3B  
 - [che ora è?](https://gretalopopolo.github.io/gim/Esercizio_3A/es08_orologio_analogico/orologio_analogico.html) 
