@@ -201,21 +201,21 @@ function showScore() {
 }
 
 function drawKeyIcons() {
-  const size = 22 * scale; // più piccolo
+  const size = 22 * scale;
   const spacing = 10 * scale;
-  const baseY = 310 * scaleY;  // abbassato da 290 a 310
+  const baseY = 310 * scaleY;
 
-  // Frecce (a sinistra)
-  drawArrowIcon(width / 2 - 160 * scale, baseY - size, "up", size);
-  drawArrowIcon(width / 2 - 160 * scale, baseY + size, "down", size);
-  drawArrowIcon(width / 2 - 200 * scale, baseY, "left", size);
-  drawArrowIcon(width / 2 - 120 * scale, baseY, "right", size);
+  // WASD (a sinistra)
+  drawKeyIcon(width / 2 - 160 * scale, baseY - size, "W", size);
+  drawKeyIcon(width / 2 - 200 * scale, baseY, "A", size);
+  drawKeyIcon(width / 2 - 160 * scale, baseY, "S", size);
+  drawKeyIcon(width / 2 - 120 * scale, baseY, "D", size);
 
-  // WASD (a destra)
-  drawKeyIcon(width / 2 + 120 * scale, baseY - size, "W", size);
-  drawKeyIcon(width / 2 + 80 * scale, baseY, "A", size);
-  drawKeyIcon(width / 2 + 120 * scale, baseY, "S", size);
-  drawKeyIcon(width / 2 + 160 * scale, baseY, "D", size);
+  // Frecce (a destra)
+  drawArrowIcon(width / 2 + 120 * scale, baseY - size, "up", size);
+  drawArrowIcon(width / 2 + 120 * scale, baseY + size, "down", size);
+  drawArrowIcon(width / 2 + 80 * scale, baseY, "left", size);
+  drawArrowIcon(width / 2 + 160 * scale, baseY, "right", size);
 }
 
 function drawArrowIcon(x, y, direction, size) {
