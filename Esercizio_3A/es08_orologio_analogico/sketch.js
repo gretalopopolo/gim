@@ -52,8 +52,8 @@ function draw() {
 	const angoloMinuti = minute() / 60 * TWO_PI;
 	rotate(angoloMinuti);
 	fill(255, 0, 0);
-	rect(-4, 10, 8, -140);
-	drawHeart(0, -140, 40);
+	rect(-4, 10, 8, -125);
+	drawHeart(0, -125, 40);
 	pop();
 
 	// Secondi (lancetta più corta, più fine e centrata)
