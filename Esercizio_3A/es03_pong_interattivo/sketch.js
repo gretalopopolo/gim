@@ -21,6 +21,7 @@ const BASE_WIDTH = 1600;
 const BASE_HEIGHT = 1200;
 
 let scaleX, scaleY, scale;
+let buttonHue = 0; // <-- Variabile per cambiare colore del pulsante
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -35,6 +36,7 @@ function setup() {
   button.position(width / 2 - 80, height / 2 + 60 * scale);  // più in basso
   button.style("font-size", `${24 * scale}px`);
   button.style("padding", "12px 24px");
+  button.style("color", "white"); // Colore del testo del pulsante
   button.mousePressed(startGame);
 }
 
@@ -72,7 +74,13 @@ function draw() {
   if (!gameStarted) {
     background(0);
     fill(0, 0, 100);
-    text("Benvenuto nel Pong Colorato!", width / 2, height / 2 - 30 * scale); // testo più in basso rispetto al centro
+    text("Benvenuto nel Pong Colorato!", width / 2, height / 2 - 30 * scale);
+
+    // Colore ciclico per il pulsante
+    buttonHue = (buttonHue + 1) % 360;
+    let btnColor = color(buttonHue, 80, 100);
+    button.style("background-color", btnColor.toString());
+
     return;
   }
 
@@ -172,9 +180,9 @@ function showScore() {
   fill(0, 0, 100);
   noStroke();
   textSize(64 * scale);
-  text(score1 + " : " + score2, width / 2, 90 * scaleY);   // leggermente più in basso
+  text(score1 + " : " + score2, width / 2, 90 * scaleY);
   textSize(48 * scale);
-  text("PUNTEGGIO", width / 2, 160 * scaleY);               // leggermente più in basso
+  text("PUNTEGGIO", width / 2, 160 * scaleY);
 }
 
 function calculateScales() {
