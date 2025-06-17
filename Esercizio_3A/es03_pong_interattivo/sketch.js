@@ -182,7 +182,7 @@ function showScore() {
 
   // Punteggio principale
   textSize(64 * scale);
-  text(score1 + " : " + score2, width / 2, 90 * scaleY);
+  text(score1 + " : " + score2, width / 2, 80 * scaleY);  // <-- alzato da 90 * scaleY a 80 * scaleY
 
   // Titolo
   textSize(48 * scale);
@@ -193,7 +193,7 @@ function showScore() {
   text(
     "Premi le freccette per muovere il giocatore di destra e i tasti WASD per muovere il giocatore di sinistra",
     width / 2,
-    210 * scaleY
+    230 * scaleY  // abbassato da 210 a 230
   );
 
   // Icone
@@ -203,7 +203,7 @@ function showScore() {
 function drawKeyIcons() {
   const size = 22 * scale; // più piccolo
   const spacing = 10 * scale;
-  const baseY = 290 * scaleY;  // Ancora più in basso rispetto a prima
+  const baseY = 310 * scaleY;  // abbassato da 290 a 310
 
   // Frecce (a sinistra)
   drawArrowIcon(width / 2 - 160 * scale, baseY - size, "up", size);
@@ -260,7 +260,6 @@ function drawKeyIcon(x, y, letter, size) {
   text(letter, 0, 0);
   pop();
 }
-
 function calculateScales() {
   scaleX = windowWidth / BASE_WIDTH;
   scaleY = windowHeight / BASE_HEIGHT;
